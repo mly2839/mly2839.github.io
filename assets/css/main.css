@@ -213,7 +213,12 @@ input, select, textarea {
 				right: 0;
 				width: 100%;
 			}
-
+		
+			h1.big {
+				font-size: 7rem;
+				font-weight: 500;
+			}
+	
 	h2 {
 		font-size: 1.75em;
 	}
@@ -2612,6 +2617,24 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+	/* Circle Image Greyscale */
+	img.grayscale {
+		max-height: 200px;
+  		max-width: 200px;
+  		object-fit: scale-down;
+		position: relative; 
+  		top: -700px;
+		left: -200px;
+		float:right;
+		border-radius: 50%;
+		filter: url(filters.svg#grayscale);
+		filter: gray; /* IE6-9 */
+		-webkit-filter: grayscale(100%);
+	}
+		img.grayscale:hover {
+			filter:none;
+			-webkit-filter: grayscale(0%);
+		}	
 
 /* List */
 
@@ -3907,3 +3930,63 @@ input, select, textarea {
 			}
 
 		}
+
+/* About Me */
+
+	#aboutme {
+		background-attachment: fixed;
+		background-image: url("images/intro.svg");
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+		#aboutme p {
+			font-size: 1.25em;
+		}
+
+			@media screen and (max-width: 980px) {
+
+				#aboutme p br {
+					display: none;
+				}
+
+			}
+
+			@media screen and (max-width: 736px) {
+
+				#aboutme p {
+					font-size: 1em;
+				}
+
+			}
+
+		@media screen and (max-width: 1280px) {
+
+			#aboutme {
+				background-attachment: scroll;
+			}
+
+		}
+
+/* Wave Animation */
+
+.wave {
+	animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+	animation-duration: 2.5s;        /* Change to speed up or slow down */
+	animation-iteration-count: infinite;  /* Never stop waving :) */
+	transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+	display: inline-block;
+  }
+  
+  @keyframes wave-animation {
+	  0% { transform: rotate( 0.0deg) }
+	 10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+	 20% { transform: rotate(-8.0deg) }
+	 30% { transform: rotate(14.0deg) }
+	 40% { transform: rotate(-4.0deg) }
+	 50% { transform: rotate(10.0deg) }
+	 60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+	100% { transform: rotate( 0.0deg) }
+  }
+  
