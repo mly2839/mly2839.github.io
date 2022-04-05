@@ -197,10 +197,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #b74e91, #5e42a6);
+				background-image: -webkit-linear-gradient(to right, #b74e91, #5e42a6);
+				background-image: -ms-linear-gradient(to right, #b74e91, #5e42a6);
+				background-image: linear-gradient(to right, #b74e91, #5e42a6);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -214,14 +214,36 @@ input, select, textarea {
 				width: 100%;
 			}
 		
-			h1.big {
-				font-size: 7rem;
-				font-weight: 500;
-			}
+		h1.big {
+			font-size: 7rem;
+			font-weight: 500;
+		}
 	
 	h2 {
 		font-size: 1.75em;
 	}
+
+		h2.major {
+			position: relative;
+		}
+
+			h2.major:after {
+				background-image: -moz-linear-gradient(to right, #3792b6, #b74e91);
+				background-image: -webkit-linear-gradient(to right, #3792b6, #b74e91);
+				background-image: -ms-linear-gradient(to right, #3792b6, #b74e91);
+				background-image: linear-gradient(to right, #3792b6, #b74e91);
+				-moz-transition: max-width 0.2s ease;
+				-webkit-transition: max-width 0.2s ease;
+				-ms-transition: max-width 0.2s ease;
+				transition: max-width 0.2s ease;
+				border-radius: 0.2em;
+				bottom: 0;
+				content: '';
+				height: 0.05em;
+				position: absolute;
+				right: 0;
+				width: 100%;
+			}
 
 	h3 {
 		font-size: 1.1em;
@@ -2567,7 +2589,6 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		border-radius: 0.25em;
 		border: 0;
 		display: inline-block;
 		position: relative;
@@ -2617,20 +2638,19 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+
 	/* Circle Image Greyscale */
 	img.grayscale {
-		max-height: 200px;
-  		max-width: 200px;
-  		object-fit: scale-down;
-		position: relative; 
-  		top: -700px;
-		left: -200px;
-		float:right;
+		max-height: 20%;
+		max-width: 20%;
+		object-fit: scale-down;
+		float: right;
 		border-radius: 50%;
 		filter: url(filters.svg#grayscale);
 		filter: gray; /* IE6-9 */
 		-webkit-filter: grayscale(100%);
 	}
+
 		img.grayscale:hover {
 			filter:none;
 			-webkit-filter: grayscale(0%);
@@ -3959,9 +3979,25 @@ input, select, textarea {
 					font-size: 1em;
 				}
 
+				#primary { 
+					width:100%; 
+				}
+
+    			#secondary { 
+					width:100%; margin:0; border:none; 
+				}
+
 			}
 
 		@media screen and (max-width: 1280px) {
+
+			#primary { 
+				width:67%; 
+			}
+
+			#secondary { 
+				width:30%; margin-left:3%;
+			}  
 
 			#aboutme {
 				background-attachment: scroll;
