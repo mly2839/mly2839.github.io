@@ -1,8 +1,21 @@
 /*
 	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
+	html5up.net | @ajlkn | @mly2389
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+
+function sendEmail(subject, email, body) {
+	Email.send({
+		SecureToken: '6c6b5bd8-6e29-4ced-aba7-b8d918677317',
+		To : 'michael.ly2839@gmail.com',
+		From : 'michael.ly2839@gmail.com',
+		Subject : email+subject,
+		Body : body,
+	}).then(
+		message => alert("mail sent successfully")
+	);
+}
 
 (function($) {
 
