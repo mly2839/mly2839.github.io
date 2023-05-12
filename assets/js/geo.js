@@ -11,7 +11,7 @@ import { WebGLRenderer, ACESFilmicToneMapping, sRGBEncoding, Color, CylinderGeom
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
-import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise';
+    import { createNoise2D } from 'https://cdn.skypack.dev/simplex-noise';
 
 //scene
 const scene = new Scene();
@@ -78,8 +78,8 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
         stone: await new TextureLoader().loadAsync("assets/geo.textures/stone.png")
     };
 
-    //setting up a noise image
-    const simplex = new SimplexNoise();
+    //initializing noise
+    const noise2D = createNoise2D();
 
     //looping to generate hexagons in a circle
     for(let i = -15; i <= 15; i++) {
@@ -91,7 +91,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
             if(position.length() > 16) {continue;}
 
             //creating a normalized value between -1 and 1 to simulate height (mountains)
-            let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
+            let noise = (noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
             noise = Math.pow(noise, 1.4);
 
             //add a new hexagon
